@@ -1,0 +1,42 @@
+<!---------------------------------------MainMenu--------------------------------------->
+<span (click)="openRoute(menu.route)" class="standard" [ngStyle]="menu.style" [style.font-size]="menu.fontsize">
+        {{menu.name}}
+     <span (mouseenter)="aboveArrow=true"  (mouseleave)="aboveArrow=false" *ngIf="doIHaveChield(menu)" (click)="menuOpen(menu)" class="fa {{(getState(menu.id)=='first')?'fa-chevron-down':'fa-chevron-up'}} arrow"></span>
+</span>
+<!---------------------------------------Level 1--------------------------------------->
+<span *ngFor="let submenu of menu.chield, let i=index">
+    <span (click)="openRoute(submenu.route)" [@movementtrigger]="getState(menu.id)"  [ngStyle]="menu.style" class="submenu"
+          [style.font-size]="submenu.fontsize">
+           {{submenu.name}}
+         <span  (mouseenter)="aboveArrow=true"  (mouseleave)="aboveArrow=false"  *ngIf="doIHaveChield(submenu)" (click)="menuOpen(submenu)" class="fa {{(getState(submenu.id)=='first')?'fa-chevron-down':'fa-chevron-up'}} arrow"></span>
+    </span>
+     <!---------------------------------------Level 2--------------------------------------->
+    <span *ngFor="let submenu2 of submenu.chield, let i=index">
+
+        <span (click)="openRoute(submenu2.route)" [@movementtrigger]="getState(submenu.id)"  [ngStyle]="menu.style" class="submenu2"
+              [style.font-size]="submenu.fontsize">
+            {{submenu2.name}}
+             <span  (mouseenter)="aboveArrow=true"  (mouseleave)="aboveArrow=false"   *ngIf="doIHaveChield(submenu2)" (click)="menuOpen(submenu2)" class="fa {{(getState(submenu2.id)=='first')?'fa-chevron-down':'fa-chevron-up'}} arrow"></span>
+        </span>
+        <!---------------------------------------Level 3--------------------------------------->
+        <span *ngFor="let submenu3 of submenu2.chield, let i=index">
+            <span (click)="openRoute(submenu3.route)" [@movementtrigger]="getState(submenu2.id)"  [ngStyle]="menu.style" class="submenu3"                      [style.font-size]="submenu.fontsize">
+                    {{submenu3.name}}
+                <span  (mouseenter)="aboveArrow=true"  (mouseleave)="aboveArrow=false"  *ngIf="doIHaveChield(submenu3)" (click)="menuOpen(submenu3)" class="fa {{(getState(submenu3.id)=='first')?'fa-chevron-down':'fa-chevron-up'}} arrow"></span>
+             </span>
+
+            <!---------------------------------------Level 4--------------------------------------->
+            <span *ngFor="let submenu4 of submenu3.chield, let i=index">
+                <span (click)="openRoute(submenu4.route)" [@movementtrigger]="getState(submenu3.id)"  [ngStyle]="menu.style" class="submenu4"                      [style.font-size]="submenu.fontsize">
+                        {{submenu4.name}}
+                   <!-- <span *ngIf="doIHaveChield(submenu3)" (click)="menuOpen(submenu3.id)" class="fa {{(getState(menu.id)=='first')?'fa-chevron-down':'fa-chevron-up'}} arrow"></span>-->
+                 </span>
+            </span> <!--level 3 close-->
+
+
+        </span> <!--level 3 close-->
+
+    </span> <!--level 2 close-->
+      <!---------------------------------------Level 2--------------------------------------->
+</span> <!--level 1 close-->
+

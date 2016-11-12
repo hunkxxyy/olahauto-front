@@ -1,0 +1,42 @@
+section {
+
+    display: block;
+    position: relative;
+}
+
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.imageListCheckBox {
+
+    background-color: #6495ed;
+    height: 50px;
+    font-size: 20px;
+    padding: 10px 0px 0px 30px;
+    color: white;
+
+}
+textarea{
+    height: 500px;
+    background-color: black;
+    color: greenyellow;
+    font-family: 'Courier New', Monospace;
+}

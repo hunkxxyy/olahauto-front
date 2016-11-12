@@ -1,0 +1,41 @@
+<modal #modalx >
+
+
+  <modal-header>
+
+    <button (click)="modalClosed()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Mi történjen a számlával?
+
+
+  </modal-header>
+
+
+  <modal-body>
+
+    <div class="modal-body saveInvoiceModalBlock">
+      <div class="row text-center">
+        <div class="col-xs-6 saveInvoiceModalBlockItem">
+          <img src="assets/img/printer.png" alt=""><br><br>
+
+          <button (click)="printInvoice()" class="btn btn-secondary">Kinyomtatom</button>
+        </div>
+        <div class="col-xs-6 saveInvoiceModalBlockItem">
+          <img src="assets/img/new-email-outline.png" alt=""><br><br>
+          <a href=""><button class="btn btn-secondary">Elküldöm e-mailben</button></a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </modal-body>
+  <modal-footer class="modal-footer">
+
+    <a href="" data-dismiss="modal"><button type="submit" class="btn btn-default pull-right">Csak mentés</button></a>
+
+
+  </modal-footer>
+</modal>

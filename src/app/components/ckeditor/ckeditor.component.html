@@ -1,0 +1,32 @@
+
+<div class="row" >
+    <div class="col-lg-12">
+        <ckeditor  *ngIf="!sourceShow" name="content" #content
+                  [value]="htmlValue"
+                  (ready)="editorReady($event)"
+                  (change)="change($event)"
+                  [config]="{uiColor: '#99000'}"
+                ></ckeditor>
+        <textarea *ngIf="sourceShow" #source (keyup)="change(source.value)"
+
+                >{{htmlValue}}</textarea>
+        <div *ngIf="fileUploader" class="imageListCheckBox">
+            Képlista megjelenítése: <input type="checkbox" [(ngModel)]="imagelistShow">
+            forrás megjelenítése: <input type="checkbox" [(ngModel)]="sourceShow">
+        </div>
+    </div>
+
+</div>
+<div class="panel panel-default"  *ngIf="imagelistShow">
+    <div class="row" >
+        <div class="col-lg-12">
+            <app-file-uploader
+                    [PATH]="PATH"
+                    [INDEX]="INDEX"
+                    [imgParams]="imgParams"
+                    ></app-file-uploader>
+        </div>
+
+    </div>
+</div>
+

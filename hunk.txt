@@ -1,0 +1,6 @@
+Modulok telepítése
+npm install --save ng2-sidebar
+npm install --save ng2-ckeditor
+npm install --save ng2-progress-bar
+npm install --save ng2-bs3-modal
+npm install --save ng2-uploader

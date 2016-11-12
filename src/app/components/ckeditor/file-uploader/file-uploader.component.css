@@ -1,0 +1,52 @@
+/*.galeryPanel{
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 500px;
+}
+.picture-holder {
+    background-color: #efefef;
+    padding: 5px 0px  5px 0px  ;
+    text-align: center;
+}
+.picture-holder img{
+    height: 154px;
+    border: 1px solid #FFFFFF;
+
+    box-shadow: inset x y blur spread color;
+    box-shadow: 1px 1px 1px #777;
+}
+*/
+
+section{
+    overflow:hidden;
+   padding: 10px;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+img{
+
+    max-width:160px;
+    max-height:160px;
+    width: auto;
+    height: auto;
+    border: 7px solid #3e2b14;
+    padding: 5px;
+}
+
+.btn{
+
+    WIDTH: 100%;
+
+}
+.warning {
+    padding: 10px;
+    font-size: 16px;
+    height: 60px!important;
+    text-align: center;
+}
+.pozicio-input{
+ width: 45px;
+}

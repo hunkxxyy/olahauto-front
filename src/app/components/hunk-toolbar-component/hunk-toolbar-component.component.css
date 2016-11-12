@@ -1,0 +1,133 @@
+ body {
+     font-family: Helmet, Freesans, sans-serif; /* See http://blog.mhurrell.co.uk/post/2946358183 */
+     font-size: 12px;
+     line-height: 1.4;
+     background-color: #fafafa;
+     color: #5a5b5d;
+     padding: 5em;
+     margin: 0;
+     vertical-align: baseline;
+ }
+/*  .toolbar
+    A CSS 3D toolbar style, based on my CSS buttons (https://gist.github.com/883309)
+    Tested in IE6-9, Firefox 3.6-4, Chrome 11, Safari 5, Opera 11.
+*/
+.toolbar {
+    display: inline-block;
+    vertical-align: bottom;
+    white-space: nowrap;
+    padding: 5px;
+    background-color: #f4f4f4;
+    width: 100%;
+}
+/*  Make IE6/7 do inline-block */
+.ie6 .toolbar,
+.ie7 .toolbar {
+    display: inline;
+    zoom: 1;
+}
+.toolbar a,
+.toolbar a:link,
+.toolbar a:visited {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1.083333em;
+    text-align: center;
+    text-decoration: none;
+    padding: 6px 14px;
+    margin: 0;
+
+    /*  Create a subtly embossed border */
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #C4C3BB #A4A399 #A4A399 #C4C3BB;
+
+    /*  Use a background-image, then overlay a gradient if available.
+        Notes:
+        - I've applied graidents to IE9 separately.
+        - The .png contains two gradients for normal and hover states
+        - The .png is on http://imgur.com/x2Ckw, but you probably want to host it locally
+        - For IE6 I used TweakPNG to set the .png's bKGD chunk to match the button background
+    */
+    background: #dadada url(http://i.imgur.com/x2Ckw.png) repeat-x 0 0; /* Should be #dedede but IE renders the PNG slightly darker, hence #dadada */
+    background-image: -o-linear-gradient(-90deg, #FFFFFF 3%, #F5F5F5 3%, #DEDEDE 99%, #CCCCCC 99%);
+    background-image: -moz-linear-gradient(-90deg, #FFFFFF 3%, #F5F5F5 3%, #DEDEDE 99%, #CCCCCC 99%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), color-stop(0.05, #F5F5F5), color-stop(0.95, #DEDEDE), to(#CCCCCC));
+    background-image: linear-gradient(-90deg, #FFFFFF 3%, #F5F5F5 3%, #DEDEDE 99%, #CCCCCC 99%);
+
+    color: #272728;
+    text-shadow: 1px 1px 0 #FAFAFA;
+    /*  Enhance the embossing if available */
+    -moz-box-shadow: -1px -1px 0 #CCCCCC inset;
+    -webkit-box-shadow: -1px -1px 0 #CCCCCC inset;
+    box-shadow: -1px -1px 0 #CCCCCC inset;
+
+    /*  Fix a border-radius colour bleed issue in Chrome */
+    -webkit-background-clip: padding-box;
+}
+/*  Put rounded corners on the first and last links in the toolbar */
+.toolbar a:first-child,
+.toolbar a:first-child:link,
+.toolbar a:first-child:visited {
+    border-left-width: 1px;
+    /*  Because slightly rounded corners are de-rigeur */
+    -moz-border-radius: 2px 0 0 2px;
+    -webkit-border-radius: 2px 0 0 2px;
+    border-radius: 2px 0 0 2px;
+}
+.toolbar a:last-child,
+.toolbar a:last-child:link,
+.toolbar a:last-child:visited {
+    /*  Because slightly rounded corners are de-rigeur */
+    -moz-border-radius: 0 2px 2px 0;
+    -webkit-border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
+}
+.toolbar a:hover,
+.toolbar a:active,
+.toolbar a:focus {
+    /*  Move the text slightly to make the button appear pressed */
+    padding: 7px 13px 5px 15px;
+
+    /*  Invert the gradient to make the button appear pressed */
+    background-position: bottom left;
+    background-image: -o-linear-gradient(90deg, #FFFFFF 3%, #F5F5F5 3%, #DEDEDE 99%, #CCCCCC 99%);
+    background-image: -moz-linear-gradient(90deg, #FFFFFF 3%, #F5F5F5 3%, #DEDEDE 99%, #CCCCCC 99%);
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#FFFFFF), color-stop(0.05, #F5F5F5), color-stop(0.95, #DEDEDE), to(#CCCCCC));
+    background-image: linear-gradient(90deg, #FFFFFF 3%, #F5F5F5 3%, #DEDEDE 99%, #CCCCCC 99%);
+
+    color: #181818;
+
+    /*  Invert the emboss effect */
+    border-color: #A4A399 #C4C3BB #C4C3BB #A4A399;
+    -moz-box-shadow: 1px 1px 0 #CCCCCC inset;
+    -webkit-box-shadow: 1px 1px 0 #CCCCCC inset;
+    box-shadow: 1px 1px 0 #CCCCCC inset;
+}
+/*  Hello keyboard users! */
+.toolbar a:active,
+.toolbar a:focus {
+    outline: 1px dotted #DEDDD8;
+}
+/*  Gradients for IE9
+    YAY! The filters don't break ClearType anymore! Alas
+    they don't play nicely with border-radius so any more
+    than about 2px looks ming.
+*/
+.ie9 .toolbar a,
+.ie9 .toolbar a:link,
+.ie9 .toolbar a:visited {
+    background-image: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC')";
+}
+.ie9 .toolbar a:hover,
+.ie9 .toolbar a:active,
+.ie9 .toolbar a:focus {
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCCCCC', endColorstr='#F5F5F5')";
+}
+/* Because IE6 doesn't support :first-child */
+.ie6 .toolbar a.first-child,
+.ie6 .toolbar a.first-child:link,
+.ie6 .toolbar a.first-child:visited {
+    border-left-width: 1px;
+}

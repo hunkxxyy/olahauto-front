@@ -1,0 +1,12 @@
+<div #slider class="hero-slider flexslider clearfix" data-autoplay="yes" data-pagination="no" data-arrows="yes"
+     data-style="fade" data-pause="yes">
+    <ul class="slides">
+
+        <li *ngFor="let pic of pictures"  >
+            <img style=" width: 100%" src="{{pic}}"/>
+
+
+        </li>
+
+    </ul>
+</div>

@@ -1,0 +1,28 @@
+<div class="visible-xs">XS</div>
+<div class="visible-sm">SM</div>
+<div class="visible-md">MD</div>
+<div class="visible-lg">LG</div>
+<div class="container-fluid main-fluid-bg">
+    <div class="container" style="background-color: #ffffff">
+        <div class="row">
+            <app-head  ></app-head>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-lg-3 col-sm-12 " >
+                <app-left-menu-bar ></app-left-menu-bar>
+            </div>
+            <div class="col-sm-12 col-md-8 col-lg-9">
+                <router-outlet ></router-outlet>
+            </div>
+        </div>
+
+
+        <div class="row ">
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,31 @@
+.card {
+   /*
+
+    display: inline-block;
+
+
+    position: relative;
+    */
+    border-radius: 2px;
+    background: #fff;
+    height: 300px;
+    width: 400px;
+    margin: 0rem 1rem 1rem 0rem;
+}
+.card-5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.panel-closer{
+    text-align: left;
+    background-color: #194b77;
+    font-size: 20px;
+    color: #FFFFFF;
+    border-bottom: 1px #ffffff solid;
+    padding: 5px;
+}
+.panel-closer .fa{
+    color: white;
+}
+.panel-closer a{
+    color: white;
+}

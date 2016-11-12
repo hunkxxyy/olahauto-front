@@ -1,0 +1,90 @@
+<modal #modal (onDismiss)="modalClosed()" (onClose)="modalClosed()">
+
+
+    <modal-header>
+
+        <button (click)="modalClosed()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Új partner adatainak rögzítése
+
+
+    </modal-header>
+
+
+    <modal-body>
+
+
+        <div class="row">
+            <div class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-1 "></div>
+                        <label class="control-label col-sm-2 " for="name">Partner neve</label>
+
+                        <div class="col-sm-8 ">
+                            <hunk-input
+                                        id="name" [className]="'form-control'" [maxchar]="50"
+                                        [(compObject)]="partner.name"
+                                    ></hunk-input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1 "></div>
+                        <label class="control-label col-sm-2 " for="group">Csoport: </label>
+
+                        <div class="col-sm-8 ">
+                            <combo-partner-group id="group"
+                                                 (selectedValueChanged)="onPartnerGroupChanged($event)"
+                                                 [compObject]="partner.partner_group_id"
+                                                 [rightArrowParams]="{left:400, top:20}"
+
+                                    >
+                            </combo-partner-group>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-1 "></div>
+                        <label class="control-label col-sm-2" for="address">Partner címe</label>
+
+                        <div class="col-sm-2">
+                            <hunk-input [className]="'form-control'" id="address"
+                                        [(compObject)]="partner.addresses[0].postalCode"
+
+                                    ></hunk-input>
+                        </div>
+                        <div class="col-sm-6">
+                            <hunk-input [className]="'form-control'"
+                                        [(compObject)]="partner.addresses[0].city"></hunk-input>
+                        </div>
+                        <div class="col-sm-1 "></div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3 "></div>
+                        <div class="col-sm-8 ">
+                            <hunk-input [className]="'form-control'"
+                                        [(compObject)]="partner.addresses[0].address"></hunk-input>
+                        </div>
+                        <div class="col-sm-1 "></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </modal-body>
+    <modal-footer class="modal-footer">
+
+
+        <button (click)="save()" type="submit" class="btn btn-secondary pull-right">Mentés</button>
+
+        <button (click)="modal.close()" class="btn btn-default pull-right">Mégse</button>
+
+
+    </modal-footer>
+</modal>

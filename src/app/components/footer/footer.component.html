@@ -1,0 +1,24 @@
+<!-- Footer -->
+<div   class="hidden-xs logo col-sm-3">
+    <img src="assets/images/logo.png">
+    www.olahauto.hu
+</div>
+
+<div class="footer_bg">
+
+            <div  *ngFor="let menu of _MenuService.footerMenu"  class="col-sm-2 col-xs-12 ">
+                <div class="row group">{{menu.name}}</div>
+                <div  *ngFor="let submenuMenu of menu.chield"   class="col-xs-12 links">
+                    <a  [routerLink]="[submenuMenu.route]">{{submenuMenu.name}}</a>
+                  <!--  <span *ngFor="let submenuMenu of menu.chield" >
+
+
+                    </span>-->
+
+                </div>
+
+
+            </div>
+
+</div>
+

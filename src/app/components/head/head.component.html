@@ -1,0 +1,79 @@
+<!--LG Large-->
+<div  class="panel-opener hidden-md hidden-lg">
+    <div (click)="_toggleSidebar()" class="fa fa-bars">&nbsp;MENÜ</div>
+</div>
+<div class="visible-lg">
+    <div class="container-fluid header">
+        <div class="row search">
+            <app-search-input></app-search-input>
+        </div>
+
+        <div  class="row links-container-lg">
+            <span *ngFor="let menu of _MenuService.headMenu"> <a [routerLink]="[menu.route]">{{menu.name}}</a></span>
+
+        </div>
+    </div>
+</div>
+<!--MD Large-->
+<div class="visible-md">
+    <div class="container-fluid header">
+        <div class="row search">
+            <app-search-input></app-search-input>
+        </div>
+        <div class="row links-container-md">
+            <span *ngFor="let menu of _MenuService.headMenu"> <a href="">{{menu.name}}</a></span>
+
+        </div>
+    </div>
+</div>
+<!--SM Large-->
+<div class="visible-sm">
+    <div class="container-fluid header">
+        <div class="row search">
+            <app-search-input></app-search-input>
+        </div>
+
+    </div>
+</div>
+<!--XS-->
+<div class="visible-xs">
+
+
+    <div class="container-fluid container-fluid header_mobil">
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img src="/assets/images/logo.png">
+                    </div>
+                    <div class="col-xs-8">
+                        <div class="container ugyfelszolgalat">
+                            <div class="row title">ÜGYFÉLSZOLGÁLAT</div>
+                            <div class="row tel"><a href="callto:">06 (30) 888-8888</a></div>
+                            <div class="row">H-Cs: 8.00-17.00, P: 8.00-14.00</div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12-fluid" style="background-color: #0000cc;display: block;height: 30px">
+
+                <app-search-input></app-search-input>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--  -->
+
+
+

@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+    <div *ngIf="exactSizeLabel" class="row warning">
+        <div class="col-xs-12">
+            <button class="btn-warning col-xs-12">{{exactSizeLabel}}</button>
+        </div>
+    </div>
+
+    <div class="row photo">
+        <div class="col-sm-3" *ngFor="let image of imageList, let i=index">
+            <div style="text-align: center">
+                <div>
+                    <img (click)="hint()" src="{{host}}{{image.file}}">
+                </div>
+                <div class="row btn">
+                  <span  *ngIf="usePosition"> Pozíció: <input type="number" [(ngModel)]="image.pos" (blur)="setPosition(image)" class="pozicio-input" ></span>
+                    <button class="btn-danger" (click)="deletePicture(image)">törlés</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <section>
+        <div class="row">
+            <div class="col-xs-4">
+                Kép neve:<input type="text" [(ngModel)]="filename">
+            </div>
+            <div class="col-xs-4">
+                Méret:<input type="number" [(ngModel)]="imgParams[0].width"> px.
+            </div>
+            <div class="col-xs-4">
+                <input type="file"
+                       ngFileSelect
+                       [options]="basicOptions"
+                       (onUpload)="handleUpload($event)"
+                       multiple="false">
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div *ngIf="progress>0" class="col-xs-12" style="padding-top: 15px; height: 2px">
+                <progress-bar [value]="progress" [max]="100"></progress-bar>
+            </div>
+        </div>
+
+    </section>
+
+
+</div>

@@ -1,0 +1,15 @@
+input{
+    width: 400px;
+}
+.modal-footer{
+    margin: 0 auto;
+    text-align: center;
+}
+.btn{
+    width: 150px;
+}
+.error{
+    color: red;
+    font-weight: bold;
+    text-align: right;
+}

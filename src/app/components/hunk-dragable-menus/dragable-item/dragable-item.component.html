@@ -1,0 +1,39 @@
+<div
+        class="col-xs-11"
+
+        [ngStyle]="object.dragingPosition"
+        [style.cursor]="cursor"
+
+
+        (mousemove)="mouseOver($event)"
+        >
+    <div
+
+            #row
+            (mousedown)="onMouseDown($event)"
+            (mouseup)="onMouseUp($event)"
+            class="dragAndDropItem"
+            unselectable="on"
+            [className]="object.class"
+
+
+            ><i class="{{object.chield.length ? 'caret':'fa fa-circle'}}"></i> {{object.name}}
+    </div>
+    <!--(openedPopUp)="onPopUp($event);currentObject=object"-->
+    <div  *ngIf="object.editable" class="dragAndDropItemDeleteBtn">
+        <app-menu-modal
+                (openedPopUp)="onPopUp($event)"
+                (valueSaved)="onNewValueSaved($event)"
+                [modalObject]="object.modalObject"
+                (onModalClosed)="modalHasClosed($event)"
+
+                ></app-menu-modal>
+        <app-confirm
+                [title]="'Menü - törlésének megerősítése'"
+                [callingButton]="'<i class=\'fa fa-trash-o\' ></i>'"
+                [question]="'Biztosan törlöd az elemet?'"
+                (valueConfirmed)="archive(object)"
+
+                ></app-confirm>
+    </div>
+</div>

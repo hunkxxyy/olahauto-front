@@ -1,0 +1,46 @@
+.dragingStyle{
+
+  border: 11px solid black;
+}
+.container{
+  background-color: lightpink;
+  height: 100px;
+  width: 1000px;
+}
+.container:-moz-drag-over{
+  border: 11px solid black;
+
+}
+.panel-heading {
+  color: #333;
+  background-color: #125790;
+  border-color: #139c9e;
+  height: 55px;
+}
+.panel-footer{
+  color: #333;
+  background-color: #125790;
+  border-color: #139c9e;
+  height: 55px;
+}
+
+.btn-secondary {
+  border-color: transparent;
+  border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  background-color: #8ac347;
+  color: #ffffff
+}
+
+.btn-secondary:hover {
+  border-color: transparent;
+  background-color: #7db53b;
+  color: #ffffff
+}
+
+.btn-secondary:focus, .btn-secondary.focus {
+  border-color: transparent;
+  background-color: #8ac347;
+  color: #ffffff
+}
+

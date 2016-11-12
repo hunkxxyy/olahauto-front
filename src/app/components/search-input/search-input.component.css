@@ -1,0 +1,32 @@
+.big_input{
+    width: 251px;
+    height: 33px;
+    padding-left: 10px;
+    border: solid 1px #e31e24;
+}
+.small_input{
+
+    height: 30px;
+    width: 100%;
+    border: solid 1px #e31e24;
+}
+.search_mobil {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 7px;
+    background: url('assets/images/head/search_ico.png') no-repeat;
+}
+.search {
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+
+    top: 4px;
+    right: 7px;
+    background: url('assets/images/head/search_ico.png') no-repeat;
+}

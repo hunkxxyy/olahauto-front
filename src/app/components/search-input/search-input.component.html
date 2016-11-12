@@ -1,0 +1,12 @@
+<div class="visible-sm visible-md visible-lg ">
+    <div style="position: absolute">
+        <input  class="big_input" type="text" (keyup)="onKeyUp($event)"   [(ngModel)]="search" placeholder="Keresés...">
+        <span (click)="runSearch()" class="search"></span>
+    </div>
+</div>
+<div class="visible-xs">
+    <div style="position: relative">
+        <input  class="small_input"  type="text"  (keyup)="onKeyUp($event)"   [(ngModel)]="search"  placeholder="Keresés...">
+        <span (click)="runSearch()" class="search_mobil"></span>
+    </div>
+</div>

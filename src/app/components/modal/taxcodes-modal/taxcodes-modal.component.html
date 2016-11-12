@@ -1,0 +1,91 @@
+<button *ngIf="btnCaption" (click)="modalOpen(modal)" class="btn btn-secondary pull-left">{{btnCaption}}</button>
+<a *ngIf="!btnCaption" (click)="modalOpen(modal)"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+
+
+<modal #modal   (onDismiss)="modalClosed()" (onClose)="modalClosed()">
+
+
+  <modal-header>
+
+    <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Szerkesztés
+
+
+  </modal-header>
+
+
+  <modal-body>
+
+
+    <div class="row">
+      <div class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="control-label col-sm-4 col-md-4 col-lg-3" for="">Név</label>
+
+          <div class="col-sm-8 col-md-8 col-lg-7  {{modalObject.name.error ? 'has-error has-feedback' : ''}}">
+
+            <input autofocus [(ngModel)]="modalObject.name.value" type="text" class="form-control" id=""
+                   placeholder="Név">
+
+            <span *ngIf="modalObject.name.error"
+                  style="font-size:18px;position: absolute;top: 10px;right:0px;padding-right:22px;color:#bfafaf"><i
+              style="color:red;" class="fa fa-warning" aria-hidden="true"></i></span>
+            <span class="feedbackLabel"> {{modalObject.name.error}}</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 col-md-4 col-lg-3" for="">Áfa kód tipus</label>
+          <div class="col-sm-8 col-md-8 col-lg-7">
+
+          <select  [(ngModel)]="modalObject.type" class="form-control"
+                       >
+            <option  *ngFor="let type of avaibleTaxTypes"  [ngValue]="type.value">{{type.name}}</option>
+          </select>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-4 col-md-4 col-lg-3" for="">Adó % </label>
+
+          <div class="col-sm-8 col-md-8 col-lg-7  {{modalObject.taxRate.error ? 'has-error has-feedback' : ''}}">
+
+            <input class="form-control" [(ngModel)]="modalObject.taxRate.value" type="number" placeholder="%">
+            <span *ngIf="modalObject.taxRate.error"
+                  style="font-size:18px;position: absolute;top: 10px;right:0px;padding-right:22px;color:#bfafaf"><i
+              style="color:red;" class="fa fa-warning" aria-hidden="true"></i></span>
+            <span class="feedbackLabel"> {{modalObject.taxRate.error}}</span>
+          </div>
+
+
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-4 col-md-4 col-lg-3" for="">Megjegyzés</label>
+
+
+
+          <div class="col-sm-8 col-md-8 col-lg-7">
+            <textarea  [(ngModel)]="modalObject.description" class="form-control" placeholder="Leírás"></textarea>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </modal-body>
+  <modal-footer class="modal-footer">
+
+
+    <a (click)="save()">
+      <button type="submit" class="btn btn-secondary pull-right">Mentés</button>
+    </a>
+    <button (click)="modal.close();" class="btn btn-default pull-right">Mégse</button>
+
+
+  </modal-footer>
+</modal>

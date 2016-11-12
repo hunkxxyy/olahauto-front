@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h1>Menüszerkezet <span class="small breadcrumb"><a href="#">Admin <i
+                class="fa fa-angle-double-right"
+                aria-hidden="true"></i></a>Főmenü beállítása</span>
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading panelHeader">
+                <!-- <button type="submit" class="btn btn-secondary pull-left addNewBlockShow">+ Új csoport</button>-->
+                <app-menu-modal
+                        (openedPopUp)="onPopUp($event)"
+                        (valueSaved)="onNewValueSaved($event)"
+                        [modalObject]="currentItemGroup"
+                        [btnCaption]="'+ Új csoport'"
+
+                        >
+                </app-menu-modal>
+
+
+                <div class="pull-left searchInputGroup">
+
+                </div>
+
+                <!--<a href="">
+                    <button type="submit" class="btn btn-secondary pull-right">Mentés</button>
+                </a>
+-->
+                <div class="divclear"></div>
+            </div>
+
+            <div class="panel-body"
+                 #dragingarea
+                 (mousemove)="mouseMove($event)"
+
+                    >
+                <div class="form-horizontal" role="form">
+                    <div class="form-group" #obectContainer>
+
+                        <div *ngFor="let igroup of groups, let i=index">
+                            <app-dragable-item
+                                    [object]="igroup"
+
+                                    (selected)="onselected($event)"
+                                    (dropped)="ondropped($event)"
+                                    (submenuClick)="onSubmenuClick($event)"
+                                    (groupHasModified)="onGroupHasModified($event)"
+                                    (groupHasArchived)="onGroupHasArchived($event)"
+
+                                    ></app-dragable-item>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--<div class="panel-footer">
+                <a>
+                    <button (click)="rendezes()" class="btn btn-secondary pull-right">Mentés</button>
+                </a>
+
+                <div class="divclear"></div>
+            </div>-->
+        </div>
+    </div>
+</div>

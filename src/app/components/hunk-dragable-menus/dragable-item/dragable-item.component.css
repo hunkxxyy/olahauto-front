@@ -1,0 +1,59 @@
+.dragAndDropItem {
+  position: relative;
+  margin-bottom: 15px;
+  padding: 5px;
+  width: 100%;
+  background-color: #eeeeee;
+  border: 1px dashed #cccccc;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: bold;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+
+}
+
+.draging{
+  position: relative;
+  margin-bottom: 15px;
+  padding: 5px;
+  width: 100%;
+  opacity: 0.6;
+  background-color: #eeeeee;
+  border: 1px dashed #00a9f5;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: bold;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+
+
+}
+.dragAndDropItemDeleteBtn {
+
+  right: -50px
+}
+
+.dragAndDropItemDeleteBtn {
+  position: absolute;
+  top: 5px;
+  right: -35px
+}
+
+.dragAndDropItemDeleteBtn i {
+  font-size: 20px
+}

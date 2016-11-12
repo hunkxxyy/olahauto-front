@@ -1,0 +1,51 @@
+<modal #modal (onDismiss)="modalClosed()" >
+
+
+    <modal-header>
+
+        <button (click)="modalClosed()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Bejelentkezés
+
+
+    </modal-header>
+
+
+    <modal-body>
+
+
+        <div class="row">
+            <div class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-xs-2">&nbsp;</div>
+                    <div class="col-xs-10">
+                        <input  (keyup)="onKeyUp($event)"   [(ngModel)]="username" class="form-control" autofocus type="text" placeholder="Név">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-xs-2">&nbsp;</div>
+                    <div class="col-xs-10">
+                        <input   (keyup)="onKeyUp($event)"   [(ngModel)]="password" class="form-control" autofocus type="password" placeholder="Jelszó">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-xs-12" style="text-align: center">
+                <span class="error"  *ngIf="error">Sikertelen azonosítás!</span>
+            </div>
+        </div>
+    </modal-body>
+    <modal-footer class="modal-footer">
+        <div style="width: 100%; text-align: center">
+            <button type="submit" (click)="login()" class="btn btn-secondary">Belépés</button>
+        </div>
+
+
+    </modal-footer>
+</modal>

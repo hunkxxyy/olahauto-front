@@ -1,0 +1,32 @@
+<input type="text" #comboBaseSerach class="form-control"
+       (keydown)="onKeyDown($event)"
+       [style.cursor]="cursor"
+       (keyup)="onKeyUp($event)"
+       [(ngModel)]="selectedObject.name"
+       (mousemove)="onMouseOver($event)"
+       (click)="onInputClick()"
+         (blur)="onBlur()"
+       >
+<span (click)="downArrowClick()" class="caret_combo_arrow caret"></span>
+<ul *ngIf="comboBaseSuggestion.length" style="display: block;width:100%;max-height:250px; overflow: auto;"
+    class="dropdown-menu groupSelector">
+  <li *ngFor="let group of comboBaseSuggestion let i=index"
+      [ngStyle]="{'padding-left':20*group.treeLevel+'px'}"
+      [ngClass]="{active : selectedIndex ===i}"
+      class="groupSelectorItemSecondary"
+    (mousedown)="choseeByMouse(i)"
+
+    >
+    <a>
+
+
+      <span class="{{group.haveChield ? 'caret' : 'fa fa-circle'}}"></span> {{group.name}}
+    </a>
+
+
+  </li>
+</ul>
+
+
+
+

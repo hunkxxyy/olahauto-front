@@ -1,0 +1,40 @@
+<!--HA Index oldal-->
+<div  *ngIf="routeIndex==''" style="background-color: #FFFFFF">
+    <app-flex-slider></app-flex-slider>
+</div>
+<!----------------------------------------Toolbar begin---------------------------------------->
+<app-hunk-toolbar-component
+        [show]="toolbarshow"
+        (toolbarLeave)="onToolbarLeave('leave')"
+        (changeView)="onChangeView($event)"
+        (save)="saveContent($event)"
+        >
+</app-hunk-toolbar-component>
+
+<!-- Start Content -->
+<div  *ngIf="spinnerShow" hunkhtml [htmlContent]="spinner"></div>
+<div  *ngIf="!spinnerShow " (mouseleave)="onToolbarLeave('enter')">
+
+            <!--------------------------------------Editor Implant-------------------------------------->
+
+            <app-ckeditor *ngIf="editorshow"
+                          [htmlValue]="currentContent"
+                          [PATH]="remoteImagePath"
+                          [INDEX]="routeIndex"
+                          [imgParams]="[{width: 300, subdir: 'kicsi'},{width: 800, subdir: 'nagy'}]"
+                          [fileUploader]="true"
+                          (valueChanged)="onValueChanged($event)"
+                    ></app-ckeditor>
+
+            <!--------------------------------------Editor Implant-------------------------------------->
+
+
+            <!--------------------------------------Content begin-------------------------------------->
+
+            <div *ngIf="!editorshow" class="inner">
+                <div hunkhtml [htmlContent]="currentContent"></div>
+            </div>
+            <!--------------------------------------Content end-------------------------------------->
+
+</div>
+<!-- Start Site Footer -->

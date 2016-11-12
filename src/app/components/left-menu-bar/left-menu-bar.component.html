@@ -1,0 +1,98 @@
+<!-------------------------------------------MOBIL LEFT PANEL------------------------------------------->
+<div class="panel-opener hidden-md hidden-lg">
+    <ng2-sidebar [(open)]="_MenuService.leftMenuPanelOpen">
+        <div class="card card-5">
+            <div class="panel-closer">
+                <a (click)="_toggleSidebar()" class=" fa fa-toggle-left"> Menü bezárása </a>
+            </div>
+            <nav>
+
+                <app-one-menu
+
+                        [menuType]="'head'"
+                        [menu]="{name:'Termékek',route:'','style':customStyle}"
+                        (menuClicked)="onMenuClicked($event)"
+                        ></app-one-menu>
+                <div *ngIf="_AuthService.logged">
+                    <app-one-menu
+                            *ngFor="let mainMenu of  _MenuService.adminMenu "
+                            [menuType]="mainMenu.menuType"
+                            [menu]="mainMenu"
+                            (menuClicked)="onMenuClicked($event)"
+
+                            ></app-one-menu>
+                </div>
+                <app-one-menu
+                        *ngFor="let mainMenu of  _MenuService.headMenu "
+                        [menuType]="mainMenu.menuType"
+                        [menu]="mainMenu"
+                        (menuClicked)="onMenuClicked($event)"
+
+                        ></app-one-menu>
+                <app-one-menu
+                        *ngFor="let mainMenu of  _MenuService.leftMenu "
+                        [menuType]="mainMenu.menuType"
+                        [menu]="mainMenu"
+                        (menuClicked)="onMenuClicked($event)"
+
+                        ></app-one-menu>
+
+            </nav>
+        </div>
+    </ng2-sidebar>
+
+</div>
+<!-------------------------------------------NORMAL LEFT PANEL------------------------------------------->
+<div class="panel-opener hidden-xs hidden-sm">
+    <nav>
+
+        <app-one-menu
+
+                [menuType]="'head'"
+                [menu]="{name:'Termékek',route:'','style':customStyle}"
+                (menuClicked)="onMenuClicked($event)"
+                ></app-one-menu>
+        <div *ngIf="_AuthService.logged">
+            <app-one-menu
+                    *ngFor="let mainMenu of  _MenuService.adminMenu "
+                    [menuType]="mainMenu.menuType"
+                    [menu]="mainMenu"
+                    (menuClicked)="onMenuClicked($event)"
+
+                    ></app-one-menu>
+        </div>
+        <app-one-menu
+                *ngFor="let mainMenu of  _MenuService.leftMenu "
+                [menuType]="mainMenu.menuType"
+                [menu]="mainMenu"
+                (menuClicked)="onMenuClicked($event)"
+
+                ></app-one-menu>
+
+    </nav>
+</div>
+<!--<nav>
+
+    <app-one-menu
+
+            [menuType]="'head'"
+            [menu]="{name:'Termékek',route:'','style':customStyle}"
+            ></app-one-menu>
+    <div  *ngIf="_AuthService.logged">
+    <app-one-menu
+            *ngFor="let mainMenu of  _MenuService.adminMenu "
+            [menuType]="mainMenu.menuType"
+            [menu]="mainMenu"
+
+
+            ></app-one-menu>
+    </div>
+    <app-one-menu
+            *ngFor="let mainMenu of  _MenuService.leftMenu "
+            [menuType]="mainMenu.menuType"
+            [menu]="mainMenu"
+
+
+            ></app-one-menu>
+
+</nav>-->

@@ -1,0 +1,80 @@
+.header{
+    background-image: url("assets/images/head/head_main_bg.jpg");
+    background-repeat: no-repeat;
+    height: 273px;
+    background-size: cover;
+}
+.header_mobil{
+    background-image: url("assets/images/head/mobil_head.jpg");
+    background-repeat: no-repeat;
+    padding: 10px 0px 10px 0px ;
+
+
+}
+.header_mobil img{
+
+    width: 85px;
+    padding-left: 10px;
+
+}
+.ugyfelszolgalat{
+    text-align: center;
+    font-size: 11px;
+}
+.ugyfelszolgalat .title{
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+.ugyfelszolgalat a{
+    color: red;
+    font-size: 15px;
+}
+h2{
+    font-size: 8px;
+}
+.search{
+    padding-top: 100px;
+    padding-left: 260px;
+}
+.search_mobil{
+    padding-top: 60px;
+    padding-left: 145px;
+}
+.links-container-lg{
+    padding-top: 106px;
+    padding-left: 255px;
+}
+.links-container-lg a {
+    font-size: 15px;
+    padding-right: 70px;
+}
+.links-container-md{
+    padding-top: 106px;
+    padding-left: 255px;
+}
+.links-container-md a {
+    padding-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+
+
+}
+a:hover{
+    font-weight: bold;
+}
+ /*SIDEBAR*/
+.panel-opener{
+    position: relative;
+    top: 0px;
+    left: 15px;
+}
+.panel-opener .fa{
+    cursor: pointer;
+    font-size: 20px;
+    color: #194b77;
+
+}
