@@ -72,16 +72,6 @@ export interface Partner {
 
 }
 
-export interface GridController {
-    limit:number;
-    offset:number;
-    count:number;
-    orderBy:NameAndAlias;
-    desc:string;
-    searchText?:string;
-    currentPage:number;
-    PageTurnerShowNumberOfPages:number;
-}
 export interface Item {
     id: number,
     singForArhive?:boolean
@@ -102,4 +92,13 @@ export interface Item {
     gross_weight: number,
     bar_code: string
 
+}
+export interface GridController {
+    limit:number;
+    offset:number;
+    count:number;
+    orderBy:NameAndAlias;
+    searchText?:string;
+    currentPage:number;
+    PageTurnerShowNumberOfPages:number;
 }

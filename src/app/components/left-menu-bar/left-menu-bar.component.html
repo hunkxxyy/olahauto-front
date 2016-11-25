@@ -62,6 +62,13 @@
                     ></app-one-menu>
         </div>
         <app-one-menu
+                *ngFor="let mainMenu of  _MenuService.termekekMenu "
+                [menuType]="mainMenu.menuType"
+                [menu]="mainMenu"
+                (menuClicked)="onMenuClicked($event)"
+
+                ></app-one-menu>
+        <app-one-menu
                 *ngFor="let mainMenu of  _MenuService.leftMenu "
                 [menuType]="mainMenu.menuType"
                 [menu]="mainMenu"

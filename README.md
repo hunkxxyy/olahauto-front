@@ -5,6 +5,7 @@ npm install --save ng2-ckeditor
 npm install --save ng2-progress-bar
 npm install --save ng2-bs3-modal
 npm install --save ng2-uploader
+npm i --save angular2-color-picker
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-alpha.universal.1.
 

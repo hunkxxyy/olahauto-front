@@ -9,10 +9,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-
-
+/* ---------------------------------------------------Imported Moduls--------------------------------------------------- */
+import { SidebarModule } from 'ng2-sidebar';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { CKEditorModule } from 'ng2-ckeditor';
+import {ProgressBarModule} from "ng2-progress-bar";
 import { UPLOAD_DIRECTIVES } from 'ng2-uploader/ng2-uploader';
+import {ColorPickerModule} from 'angular2-color-picker';
+
+
+/* ---------------------------------------------------Imported Moduls---END--------------------------------------------- */
+
+
+
 import { APIService } from './globals/services/API.service';
 import { AuthService } from './globals/services/auth.service';
 import { ErrorService } from './globals/services/error.service';
@@ -38,20 +47,20 @@ import { HeadComponent } from './components/head/head.component';
 import { LeftMenuBarComponent } from './components/left-menu-bar/left-menu-bar.component';
 
 import { FooterComponent } from './components/footer/footer.component';
-import { SidebarModule } from 'ng2-sidebar';
+
 import { MenuService } from './services/menu-service.service';
 import { OneMenuComponent } from './components/left-menu-bar/one-menu/one-menu.component';
 
 
 /*--------------------------------------HTML EDIT-------------------------------------- */
-import { CKEditorModule } from 'ng2-ckeditor';
+
 import { DynamicHtmlComponent } from './views/dynamic-html/dynamic-html.component';
 import { HtmlcontentsService } from './globals/services/htmlcontents.service';
 import { HunkToolbarComponentComponent } from './components/hunk-toolbar-component/hunk-toolbar-component.component';
 import { CkeditorComponent } from './components/ckeditor/ckeditor.component';
 import {FileUploaderComponent} from './components/ckeditor/file-uploader/file-uploader.component';
 import { FileuploadTempComponent } from './views/fileupload-temp/fileupload-temp.component';
-import {ProgressBarModule} from "ng2-progress-bar";
+
 /*--------------------------------------FLEX SLIDER indexen-------------------------------------- */
 import { FlexSliderComponent } from './components/flex-slider/flex-slider.component';
 import { SetupFlexSliderComponent } from './admin/setup-flex-slider/setup-flex-slider.component';
@@ -61,6 +70,19 @@ import { SearchResultComponent } from './views/search-result/search-result.compo
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import { ExitComponent } from './admin/exit/exit.component';
+/*------------------------------------------Termekek-Admin------------------------------------------*/
+
+import { TermekekComponent } from './admin/termekek/termekek.component';
+import { TermekListaComponent } from './admin/termekek/termek-lista/termek-lista.component';
+import { NewTermekComponent } from './admin/termekek/new-termek/new-termek.component';
+import { ComboCsoportComponent } from './components/combo-base/combo-csoport/combo-csoport.component';
+import { ComboAlcsoportComponent } from './components/combo-base/combo-alcsoport/combo-alcsoport.component';
+import { ComboBaseComponent } from './components/combo-base/comboBase.component';
+import { DynamicRoutesComponent } from './views/dynamic-routes/dynamic-routes.component';
+
+import { TermekekViewComponent } from './views/termekek-view/termekek-view.component';
+import { EgytermekComponent } from './views/egytermek/egytermek.component';
+import { EgytermekFullComponent } from './views/egytermek-full/egytermek-full.component';
 
 
 @NgModule({
@@ -100,7 +122,20 @@ import { ExitComponent } from './admin/exit/exit.component';
     SetupFlexSliderComponent,
     SearchResultComponent,
     ModalLoginComponent,
-    ExitComponent
+    ExitComponent,
+
+    TermekekComponent,
+    TermekListaComponent,
+    NewTermekComponent,
+    ComboBaseComponent,
+
+    ComboCsoportComponent,
+    ComboAlcsoportComponent,
+    DynamicRoutesComponent,
+    TermekekComponent,
+    TermekekViewComponent,
+    EgytermekComponent,
+    EgytermekFullComponent
 
   ],
   imports: [
@@ -111,7 +146,8 @@ import { ExitComponent } from './admin/exit/exit.component';
     Ng2Bs3ModalModule,
     SidebarModule,
     CKEditorModule,
-    ProgressBarModule
+    ProgressBarModule,
+    ColorPickerModule
 
   ],
 

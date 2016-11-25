@@ -20,6 +20,7 @@ interface MenuType{
 export class MenuService {
 
     mainMenu:any;
+    termekekMenu:any[]=[];
     leftMenu:any;
     headMenu:any;
     footerMenu:any;
@@ -57,7 +58,7 @@ export class MenuService {
                 this.headMenu =  this.getMenGroupByName('FELSŐ MENÜ').chield;
                 this.footerMenu = this.getMenGroupByName('LÁB MENÜ').chield;
                 this.adminMenu.push(this.getMenGroupByName('ADMIN'));
-
+                this.termekekMenu.push(this.getMenGroupByName('TERMÉKEK'));
                 console.log(data);
 
             },

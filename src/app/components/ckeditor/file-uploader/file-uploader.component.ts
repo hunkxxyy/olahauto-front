@@ -17,7 +17,7 @@ interface ImgParam {
     selector: 'app-file-uploader',
     templateUrl: 'file-uploader.component.html',
     styleUrls: ['file-uploader.component.css'],
-    inputs: ['PATH', 'INDEX', 'imgParams','exactSizeLabel','usePosition'],
+    inputs: ['PATH', 'INDEX', 'imgParams','exactSizeLabel','usePosition','disbleNameInput','disbleSizeInput'],
 
 
 })
@@ -29,6 +29,8 @@ export class FileUploaderComponent implements OnInit {
     private progress:number = 0;
     private response:any = {};
     imageList:any[] = [];
+    disbleNameInput:boolean=false;
+    disbleSizeInput:boolean=false;
     host:any;
     exactSizeLabel='';
     PATH:string = ''; //A szerverena kép gyökér utvonala
@@ -99,6 +101,7 @@ export class FileUploaderComponent implements OnInit {
             params: {"index": this.INDEX},
             microservice: globals.MS_SERVER
         };
+
         this._ApiService.getResponseFromMicroService(connection)
             .subscribe(
                 data=> {
